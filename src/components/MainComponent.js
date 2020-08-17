@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Home from "./HomeComponent";
 import Menu from "./MenuComponent";
+import About from "./AboutComponent";
 import Contact from "./ContactComponent";
 import DishDetails from "./DishdetailComponent";
 import Header from "./HeaderComponent";
@@ -61,6 +62,11 @@ class Main extends Component {
 					/>
 					<Route path="/menu/:dishId" component={DishWithId} />
 					<Route exact path="/contactus" component={Contact} />
+					<Route
+						exact
+						path="/aboutus"
+						component={() => <About leaders={this.state.leaders} />}
+					/>
 					<Redirect to="/home" />
 				</Switch>
 				<Footer />
