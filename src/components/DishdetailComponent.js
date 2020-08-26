@@ -23,7 +23,7 @@ function RenderDish({ dish }) {
 	);
 }
 
-function RenderComments({ comments }) {
+function RenderComments({ comments, addComment, dishId }) {
 	if (comments != null) {
 		return (
 			<div className="container">
@@ -34,7 +34,7 @@ function RenderComments({ comments }) {
 							<li>
 								<p>{comment.comment}</p>
 								<p>
-									{comment.author},{" "}
+									-- {comment.author},{" "}
 									{new Intl.DateTimeFormat("en-US", {
 										year: "numeric",
 										month: "short",
@@ -45,6 +45,9 @@ function RenderComments({ comments }) {
 						);
 					})}
 				</ul>
+				<div>
+					<CommentForm dishId={dishId} addComment={addComment} />
+				</div>
 			</div>
 		);
 	} else {
@@ -73,10 +76,11 @@ const DishDetails = (props) => {
 						<RenderDish dish={props.dish} />
 					</div>
 					<div className="col-12 col-md-5 m-1">
-						<RenderComments comments={props.comments} />
-						<div>
-							<CommentForm />
-						</div>
+						<RenderComments
+							comments={props.comments}
+							addComment={props.addComment}
+							dishId={props.dish.id}
+						/>
 					</div>
 				</div>
 			</div>
