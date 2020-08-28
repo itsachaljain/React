@@ -28,7 +28,7 @@ function About(props) {
 		);
 	}
 
-	function RenderContent({ leaders, isLoading, errMess }) {
+	function RenderContent({ isLoading, errMess }) {
 		if (isLoading) {
 			return <Loading />;
 		} else if (errMess) {

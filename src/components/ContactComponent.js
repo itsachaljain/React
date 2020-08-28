@@ -7,7 +7,7 @@ import {
 	Row,
 	Col,
 } from "reactstrap";
-import { Control, Errors, Form, actions } from "react-redux-form";
+import { Control, Errors, Form } from "react-redux-form";
 import { Link } from "react-router-dom";
 
 const required = (val) => val && val.length;
@@ -84,7 +84,11 @@ class Contact extends Component {
 							>
 								<i className="fa fa-phone"></i> Call
 							</a>
-							<a role="button" className="btn btn-info">
+							<a
+								role="button"
+								className="btn btn-info"
+								href="https://www.skype.com/en/"
+							>
 								<i className="fa fa-skype"></i> Skype
 							</a>
 							<a
